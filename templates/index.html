@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Seul Rented Bike Count Predictor App </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    
+    <style>
+      body {
+          background-color: #f0f0f0;
+      }
+  </style>
+
+  </head>
+  
+  <body>
+  <div class="text-center">
+  <img src="\static\images\Suel Bike.jpeg" alt="This image is not available in this location" height =400 , width =1600>
+  
+  <span class="badge text-bg-info">Info about features</span>
+
+  
+  
+  
+  <div class="login">
+   <center>
+    <form action="{{url_for('predict')}}" method="post">
+        <div style="background-color: #fff; border-radius: 20px; width: 80%;margin-top: 40px;padding: 20px;">
+          <h1><font  face ="times new roman"> <b>*****Enter the Rented Bike count features*****</b> </font></h1>
+          <div style="display: grid; margin-top: 20px; margin-bottom: 20px; column-gap: 5px; grid-template-columns: auto auto auto auto;">
+
+            <input type="date" name= "Date" style="width: 250px; border: none !important; border-bottom: 2px solid gray !important; padding: 4px; outline: none;" placeholder="Enter a date (format - dd/mm/yy)" pattern="\d{1,2}/\d{1,2}/\d{4}" required="required">
+            <input type="int" name= "Hour" style="width: 250px; border: none !important; border-bottom: 2px solid gray !important; padding: 4px; outline: none;" placeholder="Enter an hour (range- 1 to 24)" required="required">
+            <input type="float" name= "Temperature" style="width: 250px; border: none !important; border-bottom: 2px solid gray !important; padding: 4px; outline: none;" placeholder="Enter a temperature in (°C)" required="required">
+            <input type="float" name= "Humidity"  style="width: 250px; border: none !important; border-bottom: 2px solid gray !important; padding: 4px; outline: none;" placeholder="Enter Humidity(%) (range - 1 to 100)" required="required">
+            <input type="float" name= "Wind_speed" style="width: 250px; border: none !important; border-bottom: 2px solid gray !important; padding: 4px; outline: none;" placeholder="Enter Wind speed in (m/s)" required="required">
+            <input type="float" name= "Visibility" style="width: 250px; border: none !important; border-bottom: 2px solid gray !important; padding: 4px; outline: none;" placeholder="Enter Visibility (10m)" required="required">
+            <input type="float" name= "Solar_Radiation" style="width: 250px; border: none !important; border-bottom: 2px solid gray !important; padding: 4px; outline: none;" placeholder="Enter Solar Radiation (MJ/m2)" required="required">
+            <input type="float" name= "Rainfall" style="width: 250px; border: none !important; border-bottom: 2px solid gray !important; padding: 4px; outline: none;" placeholder="Enter Rainfall in (mm)" required="required">
+            <input type="float" name= "Snowfall" style="width: 250px; border: none !important; border-bottom: 2px solid gray !important; padding: 4px; outline: none;" placeholder="Enter Snowfall in (cm)" required="required">
+            <input type="text" name= "Seasons" style="width: 250px; border: none !important; border-bottom: 2px solid gray !important; padding: 4px; outline: none;" placeholder="Enter a Season (choose from the given names - Spring, Summer, Winter & Autumn)" required="required">
+            <input type="text" name= "Holiday" style="width: 250px; border: none !important; border-bottom: 2px solid gray !important; padding: 4px; outline: none;" placeholder="Enter Holiday or No Holiday" required="required">
+            <input type="text" name= "Functioning_Day" style="width: 250px; border: none !important; border-bottom: 2px solid gray !important; padding: 4px; outline: none;" placeholder="Enter Yes or No" required="required">
+          </div>
+
+          <div class="button_cont" align="center"><a class="button_css" href="https://www.google.com/" target="_blank" rel="nofollow noopener">
+              <button type="submit" class="btn btn-primary btn-block btn-large"><strong>Predict Rented Bike Count</strong></button></a>
+          </div>
+        </div>
+        
+        <!-- Show button -->
+        
+        
+    </form>
+    
+    <!-- Show predicted output using ML model --> 
+   <div>
+       <center>
+   <h1><font  face ="times new roman"> <b>{{ prediction_text }}<font></b></h1>
+       </center>
+   </div>
+
+ </div>
+
+</body>
+</html>
