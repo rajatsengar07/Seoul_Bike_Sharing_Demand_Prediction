@@ -7,7 +7,7 @@ import os
 
 app = Flask(__name__)
 
-model = pickle.load(open('xgboost_regressor_r2_0_point_95_v1.pkl' ,'rb'))
+model = pickle.load(open('Model/xgboost_regressor_r2_0_point_95_v1.pkl' ,'rb'))
 
 df = pd.DataFrame()
 
@@ -19,8 +19,8 @@ def home():
 def predict():
     global df
      
-    ml_module_path = r"xgboost_regressor_r2_0_point_95_v1.pkl"
-    standard_scaler_path = r"mmc.pkl"
+    ml_module_path = r"Model/xgboost_regressor_r2_0_point_95_v1.pkl"
+    standard_scaler_path = r"Model/mmc.pkl"
 
     
     model = pickle.load(open(ml_module_path , 'rb'))
