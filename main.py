@@ -116,7 +116,7 @@ def predict():
     key_values = list(input_feat.values())
 
     # Create a DataFrame from the dictionary
-    new_data = {**dict(zip(key_names, key_values)), 'Predicted Output': output}
+    new_data = {**dict(zip(key_names, key_values)), **{'Predicted Output': output}}
     new_df = pd.DataFrame([new_data])
 
     # Concatenate the DataFrames
